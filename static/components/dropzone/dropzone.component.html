@@ -1,0 +1,24 @@
+<div class="drop-zone-container"
+     (drop)="onDrop($event)"
+     (dragover)="onDragOver($event)"
+     (dragenter)="onDragEnter($event)"
+     (dragleave)="onDragLeave($event)"
+     (click)="selectWorkOrder()"
+     [ngClass]="adjustDropZone ? 'drop-valid': (adjustDropZone==undefined)? '':'drop-invalid'">
+
+  <div class="drop-accept-zone"></div>
+
+  <div class="drop-zone flex-item">
+    <img *ngIf="adjustDropZone==undefined" src="./assets/drop_here.svg" />
+    <img *ngIf="adjustDropZone" src="./assets/valid.svg" />
+    <img *ngIf="adjustDropZone==false" src="./assets/invalid.svg" />
+    <br/>
+    <br/>
+    <div class="large-text">
+          <span *ngIf="adjustDropZone==undefined">Drop the work order zip file here.<br/>
+    (or click here)</span>
+      <span *ngIf="adjustDropZone">Release the valid work order zip file.</span>
+      <span *ngIf="adjustDropZone==false">Invalid work order!</span>
+    </div>
+  </div>
+</div>

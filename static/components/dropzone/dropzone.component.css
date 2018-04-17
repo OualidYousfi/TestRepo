@@ -1,0 +1,27 @@
+.drop-zone-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+}
+
+.drop-zone {
+  text-align: center;
+}
+
+.drop-invalid {
+  background-color: #f43838;
+}
+
+.drop-valid {
+  background-color: #2095f2;
+}
+
+.drop-accept-zone {
+  opacity: 0;
+  width: 40%;
+  height: 100%;
+  position: absolute;
+}

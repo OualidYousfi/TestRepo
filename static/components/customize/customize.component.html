@@ -1,0 +1,58 @@
+<p *ngIf="noauth">QR code customization</p>
+<p *ngIf="!noauth">QR code preview</p>
+
+<div class="grey-text">
+  <div *ngIf="noauth">
+    <p>There is no secure graphic for this word order. It is optional to place a custom image in the center.</p>
+
+  </div>
+  <p *ngIf="!noauth">Below is a preview of the to be generated QR code.</p>
+</div>
+
+<div class="qr-container">
+  <div class="qr-code-wrapper"
+       (click)="selectImage()"
+       (drop)="onDrop($event)"
+       (dragover)="onDragOver($event)"
+       (dragenter)="onDragEnter($event)"
+       (dragleave)="onDragLeave($event)">
+    <img class="qr-image" [src]="_imageUrl" />
+  </div>
+  <div class="options" *ngIf="noauth">
+    <div *ngIf="false">
+      <!-- This input box is never showed. Originally this was used to change the cell in pix. For png format, it is automatically calculated.
+           Then, it was decided to remove this option for .tiff format. -->
+      Cell size in pixels:
+    <md-input-container class="cell-size-input">
+      <input mdInput type="number" [value]="cellSizeInPx" (input)="cellSizeInPxChange($event)"><span class="grey-text" mdSuffix>px</span>
+    </md-input-container>
+    </div>
+    <div>
+      <md-checkbox (change)="addHashTextToggle($event)" [checked]="addHash">Add hash</md-checkbox>
+      <app-sides [show]="addHash" (orientation)="hashOrientation($event)" [currentOrientation]="hashString?.gravity"></app-sides>
+    </div>
+    <div *ngIf="serialNumberPresent">
+      <md-checkbox (change)="addSerialToggle($event)" [checked]="addSerial">Add serial number</md-checkbox>
+      <app-sides [show]="addSerial" (orientation)="serialOrientation($event)" [currentOrientation]="serialString?.gravity"></app-sides>
+    </div>
+    <div>
+      <md-checkbox (change)="addWhiteSpaceToggle($event)" [checked]="addWhiteSpace">Add whitespace</md-checkbox>
+    </div>
+    <br />
+    <button md-button color="primary"(click)="resetCustomization()">Click here to reset the customizations</button>
+  </div>
+</div>
+
+<div *ngIf="noauth">
+  <p class="small-info center">You can upload using drag and drop on the QR image or use the browse button.</p>
+  <button md-raised-button color="accent" class="action-button" (click)="selectImage()">SELECT IMAGE</button>
+  <div class="image-size-slider-wrapper"> <br />
+    <span>Center image size</span>
+    <md-slider [min]="minImageSize" [max]="maxImageSize" [value]="centerImageSize" [thumbLabel]="true" (change)="imageSizeChange($event)" [disabled]="!presentCenterImage"></md-slider>
+  </div>
+</div>
+
+<div class="control-container">
+  <button md-raised-button color="primary" (click)="nextStep()">SELECT OUTPUT PATH</button>
+</div>
+

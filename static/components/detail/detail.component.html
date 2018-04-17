@@ -1,0 +1,36 @@
+<div class="detail-pane-wrapper">
+  <ul>
+    <li><span class="detail-key">WO ID</span><span class="detail-value">{{ manifest.workorder.id }}</span></li>
+    <li><span class="detail-key">Due date</span><span class="detail-value">{{ manifest.workorder.due_date }}</span></li>
+    <li><span class="detail-key">WO Ref</span><span class="detail-value">{{ manifest.workorder.reference }}</span></li>
+    <li><span class="detail-key">WO Type</span><span class="detail-value">{{ manifest.workorder.code_application }}</span></li>
+    <li><span class="detail-key">Substrate</span><span class="detail-value">{{ manifest.workorder.substrate }}</span></li>
+    <li><span class="detail-key">Code QTY</span><span class="detail-value">{{ manifest.codes.batch_size }}</span></li>
+  </ul>
+  <div class="printer-details-wrapper">
+    <div class="detail-key">
+      <ul><li>Printer Info</li></ul>
+    </div>
+
+    <div class="printer-details">
+      <ul>
+        <li><span class="detail-value">{{ manifest.printing_partner.name }}</span></li>
+        <li><span class="detail-value">{{ manifest.code_type.resolution_dpi }}</span> dpi</li>
+        <li><span class="detail-value">{{ manifest.equipment.technology }}</span></li>
+        <li><span class="detail-value">{{ manifest.equipment.location }}</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <ul class="file-name-info">
+    <li><span class="detail-key">Zip file</span><span class="detail-value"><br/>{{ fileName }}</span></li>
+  </ul>
+  <div class="select-other-wo">
+    <span class="small-info">Not this work order?</span><br />
+    <button md-button color="primary" (click)="showHome()">SELECT ANOTHER ZIP FILE</button>
+  </div>
+
+</div>
+
+
+

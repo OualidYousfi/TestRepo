@@ -1,0 +1,6 @@
+<p *ngIf="appendElement" class="step">
+  <span (click)="selectedSide(1)" [class.underline]="selectedOrientation===1"><a>top</a></span> |
+  <!--<span (click)="selectedSide(4)"><a>LEFT</a></span> |-->
+  <span (click)="selectedSide(3)" [class.underline]="selectedOrientation===3"><a>bottom</a></span>
+  <!-- | <span (click)="selectedSide(2)"><a>RIGHT</a></span></p>-->
+</p>

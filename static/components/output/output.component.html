@@ -1,0 +1,24 @@
+<p>Output folder:</p>
+<p class="grey-text">{{ outputFolder }}</p>
+<button md-button color="primary" (click)="changeOutputPath()">Change folder >></button>
+
+<p>How many QR codes should be in one {{ suffix }}</p>
+<md-checkbox [checked]="true" (change)="changeArchiveProperty($event)">Write codes to archive</md-checkbox>
+<div class="custom-input-container">
+  <md-input-container class="user-input no-up-down-arrow">
+    <input mdInput type="number" [value]="batchSize" (input)="batchSize = $event.target.value"><span class="grey-text" mdSuffix>per {{ suffix }}</span>
+  </md-input-container>
+</div>
+
+<p *ngIf="!generateAll">Stop generating after {{ nCodes }}:</p>
+<p *ngIf="generateAll">Generating all the codes.</p>
+  <md-checkbox [checked]="true" (change)="generateAllCodes($event)">Generate all the codes</md-checkbox>
+  <div class="custom-input-container" *ngIf="!generateAll">
+    <md-input-container class="user-input">
+      <input mdInput type="number" [min]="1" [max]="totalCodes" [value]="nCodes" (input)="nCodes = $event.target.value"><span class="grey-text" mdSuffix>QR codes</span>
+    </md-input-container>
+  </div>
+
+<div class="control-container">
+  <button md-raised-button color="primary" (click)="generateCodes()">GENERATE QR CODES</button>
+</div>

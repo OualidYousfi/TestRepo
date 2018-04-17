@@ -1,0 +1,10 @@
+<div *ngIf="mruList" class="mru-container">
+  <p class="large-text">Recent work orders: </p>
+  <div class="mru-list">
+    <ul>
+      <li *ngFor="let entry of mruList" (click)="selectEntry(entry)">{{entry}}</li>
+    </ul>
+  </div>
+</div>
+
+

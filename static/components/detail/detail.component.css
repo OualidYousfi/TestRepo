@@ -1,0 +1,40 @@
+.detail-key {
+  color: #999999;
+  font-weight: bold;
+  min-width: 35%;
+  display: inline-block;
+}
+
+.detail-value {
+  font-weight: lighter;
+}
+
+.detail-pane-wrapper {
+  font-size: 14px;
+}
+
+.detail-pane-wrapper ul li {
+  list-style-type: none;
+  margin: 15px 0 15px 0;
+}
+
+.select-other-wo {
+  margin: 25px;
+  text-align: center;
+}
+
+.file-name-info {
+  margin-bottom: 25px;
+}
+
+.printer-details-wrapper {
+  display: flex;
+}
+
+.printer-details ul {
+  padding-left: 25px;
+}
+
+.printer-details {
+  flex: 1;
+}

@@ -1,0 +1,22 @@
+.mru-container {
+
+}
+
+.mru-list {
+
+}
+
+.mru-list ul {
+  list-style-type: none;
+  padding: 0 0 0 0;
+  margin: 0;
+}
+
+.mru-list ul li {
+  padding: 5px 0 5px 0;
+}
+
+.mru-list ul li:hover {
+  background-color: #2196f3;
+  cursor: pointer;
+}

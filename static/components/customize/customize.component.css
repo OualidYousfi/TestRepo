@@ -1,0 +1,77 @@
+.qr-container {
+  width: 100%;
+  margin: auto;
+  /*margin-top: 15px;*/
+  display: flex;
+  /*border: 2px solid #999999;*/
+}
+
+.options {
+  margin-left: 10px;
+}
+
+.qr-container div {
+  flex: 1;
+}
+
+.qr-code-wrapper {
+  /*max-width: 199px; !* +- 75% size of QR image in px *!*/
+  min-width: 150px;
+  max-width: 300px;
+  margin: auto;
+  cursor: pointer;
+  /*border: 2px solid green;*/
+}
+
+.qr-image {
+  width: 100%;
+}
+
+.action-button {
+  width: 100%;
+}
+
+.user-input {
+  border: 2px solid green;
+}
+
+.qr-image-dimensions {
+  display: flex;
+  text-align: center;
+}
+
+.qr-image-dimensions div {
+  flex: 1;
+}
+
+.qr-image-dimensions md-input-container {
+  width: auto;
+  margin-left: 5px;
+}
+
+.center {
+  text-align: center;
+}
+
+.cell-size-input {
+  font-weight: bold;
+  margin-left: 5px;
+  width: 80px;
+}
+
+app-sides {
+  margin-top: 10px;
+}
+
+.image-size-slider-wrapper md-slider {
+  width: 100%;
+}
+
+.reset-button {
+  position: relative;
+  bottom: 0;
+  text-align: right;
+  right: 0;
+  margin: 25px;
+}
+

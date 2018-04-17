@@ -1,0 +1,9 @@
+<div class="parent-wrapper">
+  <div class="left-side-view"><app-detail></app-detail></div>
+  <div class="right-side-view">
+    <app-prefix *ngIf="showPrefixStep"></app-prefix>
+    <app-output *ngIf="showOutputStep"></app-output>
+    <app-progress *ngIf="showProgressStep"></app-progress>
+    <app-customize *ngIf="showCustomizeStep"></app-customize>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<p>Summary</p>
+<div class="grey-text">
+  <p>{{ prefixUrl }}</p>
+  <p>Saving to <br /> {{ outputFolder }}</p>
+  <p>{{ batch }} codes per {{ archive ? "archive" : "subfolder" }}</p>
+</div>
+
+<div class="spacing">
+  {{ action }}<br/>
+  <span class="grey-text" *ngIf="!completed">{{ etaString }}</span>
+  <md-progress-bar [mode]="mode" [value]="progress" color="accent"></md-progress-bar>
+  <button md-raised-button color="accent" class="action-button" *ngIf="progress !== 100 && !paused" (click)="stop()">STOP</button>
+  <button md-raised-button color="accent" class="action-button" *ngIf="progress === 100" (click)="showInFolder()">OPEN FOLDER</button>
+  <button md-raised-button color="accent" class="action-button" *ngIf="paused" (click)="resume()">RESUME</button>
+</div>
+
+<div class="control-container" *ngIf="progress === 100">
+  <button md-raised-button color="primary" (click)="showLanding()">DONE</button>
+</div>

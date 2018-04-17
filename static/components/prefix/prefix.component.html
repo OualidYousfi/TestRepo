@@ -1,0 +1,35 @@
+<p>URL prefix for the QR codes:</p>
+<md-radio-group class="prefix-radio">
+  <md-radio-button value="1" checked="true" (change)="urlSelect($event)">{{ workOrderPrefixText }}</md-radio-button><br/>
+  <md-radio-button value="2" (change)="urlSelect($event)">Custom</md-radio-button>
+</md-radio-group>
+<div class="custom-input-container" >
+  <md-input-container *ngIf="customUrl" class="user-input">
+    <input mdInput [value]="customPrefixText" (input)="customPrefixText = $event.target.value">
+  </md-input-container>
+</div>
+
+<p *ngIf="dpiIsChangeable">Change DPI if necessary:</p>
+<div class="custom-input-container">
+  <md-input-container *ngIf="dpiIsChangeable" class="user-input no-up-down-arrow">
+    <input mdInput type="number" [value]="dpi" (input)="dpi = $event.target.value"><span class="grey-text" mdSuffix>dpi</span>
+  </md-input-container>
+</div>
+
+<div *ngIf="isNoAuth()">
+  Select output format
+  <md-radio-group>
+    <md-radio-button value="TIFF" checked="true" (change)="outputFormatSelect($event)">.TIFF</md-radio-button>
+    <md-radio-button value="PNG" (change)="outputFormatSelect($event)">.PNG</md-radio-button>
+  </md-radio-group>
+  <p *ngIf="isPng">Set the size in millimeter for PNG format:</p>
+  <div class="custom-input-container">
+    <md-input-container *ngIf="isPng" class="user-input">
+      <input mdInput type="number" [value]="pngSize" (input)="pngSize = $event.target.value"><span class="grey-text" mdSuffix>mm</span>
+    </md-input-container>
+  </div>
+</div>
+
+<div class="control-container">
+  <button md-raised-button color="primary" (click)="nextStep()">PREVIEW</button>
+</div>

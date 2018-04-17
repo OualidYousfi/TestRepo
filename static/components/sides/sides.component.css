@@ -1,0 +1,24 @@
+p {
+  display: inline;
+  /*background-color: #000;*/
+  color: #ff5722; /* Accent color from angular, can be found in the theme/theme.css file. */
+  /*padding: 5px;*/
+  font-size: 12px;
+}
+
+span a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+/*.show{*/
+  /*opacity: 1 !important;*/
+/*}*/
+/*.step{*/
+  /*opacity: 0;*/
+  /*transition: .5s ease-in-out all;*/
+/*}*/
